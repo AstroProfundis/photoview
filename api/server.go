@@ -119,5 +119,5 @@ func main() {
 
 	}
 
-	log.Panic(http.ListenAndServe(":"+apiListenURL.Port(), handlers.CompressHandler(rootRouter)))
+	log.Panic(http.ListenAndServe(apiListenURL.Hostname()+":"+apiListenURL.Port(), handlers.CompressHandler(rootRouter)))
 }
